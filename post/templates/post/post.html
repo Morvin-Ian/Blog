@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+   <title>Blog</title>
+</head>
+
+{% extends 'post/base.html' %}
+
+
+{% block content%}
+
+  
+        <div style="background-color: whitesmoke; 
+                    padding: 20px; 
+                    margin: 10px 0% 0px 0%;
+                    border-radius: 5px;  
+                    width: 100%;
+                    box-shadow: 1px 5px rgba(151, 144, 144, 0.52);"
+                     >
+         <h4><img  style="object-fit: cover;" class="rounded-circle account-img"
+            src="{{ blogs.name.profile.image.url }}" width="100px" height="100px"> {{blogs.caption}}</h4>
+ 
+            <p>{{blogs.body}}</p>
+            <p>Posted By-{{blogs.name}}</p>
+            <p>Posted on-{{blogs.date}}</p>
+         </div>
+
+  
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</html>

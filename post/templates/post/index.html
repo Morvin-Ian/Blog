@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+   <title>Home</title>
+</head>
+
+{% extends 'post/base.html' %}
+
+
+{% block content%}
+
+
+   
+    {% for post in posts reversed %}
+  
+        <div style="background-color: whitesmoke; 
+                    padding: 20px; 
+                    margin: 10px 10% 0px 10%;
+                    border-radius: 5px;  
+                    width: 80%;
+                    box-shadow: 1px 5px rgba(151, 144, 144, 0.52);
+                   "
+                     >
+            <a style=" text-decoration: none;" href="/blog/{{post.id}}">
+               <h4><img  style="object-fit: cover; " class="rounded-circle account-img"
+                  src="{{ post.name.profile.image.url }}" width="100px" height="100px"> {{post.caption}}</h4>
+       
+            </a>
+            <p>{{post.body|truncatewords:10}}</p>
+            <p>Posted By-{{post.name}}</p>
+            <p>Posted on-{{post.date}}</p>
+         </div>
+
+   {% endfor %}
+  
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</html>
